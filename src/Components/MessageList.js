@@ -30,10 +30,11 @@ function MessageList() {
 
     return(
         <Div>
-            <Row m ={{x:"4rem"}}>
+            <Row m={{x: '4rem', y: '1rem'}}>
                 <Col >
                     <Textarea 
                     placeholder="Submit"
+                    m="-0.5rem"
                     border="1px solid"
                     value={messageInput}
                     borderColor="black"
@@ -41,7 +42,7 @@ function MessageList() {
                     />
                 </Col>
             </Row>
-            <Row flexDir="row-reverse" m={{x:"4rem"}}>
+            <Row flexDir="row-reverse" m={{x: '4rem', y:'1rem'}} >
             <Button
                 onClick={() => submitMessage()}
                 bg="black"

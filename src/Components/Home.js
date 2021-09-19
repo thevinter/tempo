@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Div from 'atomize'
+import { Div } from "atomize";
 import Header from './Header.js'
 import ApiService from "../Services/ApiService.js";
 import MessageList from "./MessageList.js";
@@ -19,10 +19,10 @@ class Home extends React.Component {
 
     render(){
         return (
-            <div>
+            <Div>
                 <Header {...this.state.user}/>
                 <MessageList/>
-            </div>
+            </Div>
         )
     }
 }
