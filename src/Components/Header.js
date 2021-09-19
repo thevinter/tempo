@@ -13,15 +13,15 @@ function Header (props) {
     }, [props]);
 
     return (
-            <Row m="2rem">
-                <Col justify="left" size="1">
+            <Row align="center" m={{x: '3.5rem', y: '2rem'}}>
+                <Col textAlign="left" justify="flex-start" size="1">
                     <Icon name="Timestamp" size="20px" />
                 </Col>
-                <Col size="10">
-                    welcome {userState.username}!
+                <Col align="center" textAlign="right" size="10" >
+                    <Text justify="flex-end">welcome {userState.username}!</Text>
                 </Col>
-                <Col justify="right" size="1">
-                    <Icon name="Add" size="20px" />
+                <Col textAlign="right" size="1">
+                    <Icon name="Add" size="23px" />
                 </Col>
             </Row>
     )
