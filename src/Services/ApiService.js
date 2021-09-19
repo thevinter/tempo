@@ -24,7 +24,7 @@ class ApiService {
     }
 
     async post(url, body){
-        return await ApiService.instance.post(this.baseURL + url, body).then(
+        return await ApiService.instance.post(this.baseURL + url, body, {headers : {token: Cookies.get("token")}}).then(
             (function(response) {
                 return response.data;
             })
@@ -48,6 +48,11 @@ class ApiService {
             ApiService.instance.defaults.headers['token'] = data.token
         }
         return data;
+    }
+
+    static async sendMessage(message) {
+        let data = await new this().post("/user/addMessage", message)
+        return data
     }
 
     static async getCurrentUser() {

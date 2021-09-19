@@ -13,7 +13,7 @@ function Header (props) {
     }, [props]);
 
     return (
-            <Row>
+            <Row m="2rem">
                 <Col justify="left" size="1">
                     <Icon name="Timestamp" size="20px" />
                 </Col>
