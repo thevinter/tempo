@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import { StyleReset } from 'atomize';
-import './App.css';
 import LoginForm from './Login.js'
 import Home from './Home.js'
 import Root from './Root.js'
+import '../App.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {

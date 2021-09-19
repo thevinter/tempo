@@ -2,7 +2,7 @@
 import { Input, Button, Text, Icon, Row, Container, Col, Div } from "atomize";
 import React, {Component, useState} from 'react';
 import { useHistory } from "react-router-dom";
-import ApiService from './Services/ApiService';
+import ApiService from '../Services/ApiService';
 
 function LoginForm () {
 

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Div from 'atomize'
 import Header from './Header.js'
-import ApiService from "./Services/ApiService.js";
+import ApiService from "../Services/ApiService.js";
 import MessageList from "./MessageList.js";
 
 class Home extends React.Component {

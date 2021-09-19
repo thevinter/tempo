@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ApiService from "./Services/ApiService";
+import ApiService from "../Services/ApiService";
 import SingleMessage from "./SingleMessage";
-import {Input, Button} from 'atomize'
+import {Row, Col, Div, Button, Textarea} from 'atomize'
 
 function MessageList() {
 
@@ -20,36 +20,37 @@ function MessageList() {
         if(messageInput.length > 0){
             let message = {message: messageInput, tags: []}
             ApiService.sendMessage(message).then(
-                (result) => console.log(result)
+                (result) => setMessageInput(messageInput.concat(result))
             )
         }
     }
 
     return(
-        <div>
-            <Input m ="4rem"
+        <Div>
+            <Row m ={{x:"4rem"}}>
+            <Col >
+            <Textarea 
+                right="0"
                 placeholder="Submit"
                 border="1px solid"
                 value={messageInput}
                 borderColor="black"
                 onChange={evt => setMessageInput(evt.target.value)}
-                suffix={
-                    <Button
-                        pos="absolute"
-                        onClick={() => submitMessage()}
-                        bg="black"
-                        hoverBg="info800"
-                        top="0"
-                        right="0"
-                        border="1px solid"
-                        rounded={{ r: "md" }}
-                        >
-                            Search
-                        </Button>
-                }
             />
+            </Col>
+            </Row>
+            <Row flexDir="row-reverse" m={{x:"4rem"}}>
+            <Button
+                onClick={() => submitMessage()}
+                bg="black"
+                hoverBg="info800"
+                border="1px solid"
+                >
+                    Send
+                </Button>
+                </Row>
             {messageList}
-        </div>
+        </Div>
     )
 
 }
