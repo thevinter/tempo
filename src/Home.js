@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Div from 'atomize'
 import Header from './Header.js'
 import ApiService from "./Services/ApiService.js";
+import MessageList from "./MessageList.js";
 
 class Home extends React.Component {
 
@@ -20,6 +21,7 @@ class Home extends React.Component {
         return (
             <div>
                 <Header {...this.state.user}/>
+                <MessageList/>
             </div>
         )
     }

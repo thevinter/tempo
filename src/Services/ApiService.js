@@ -54,6 +54,11 @@ class ApiService {
         let data = await new this().get("/user/me")
         return data
     }
+
+    static async getMessages() {
+        let data = await new this().get("/messages/all")
+        return data
+    }
 }
 
 export default ApiService;
