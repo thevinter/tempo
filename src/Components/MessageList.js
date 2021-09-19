@@ -20,7 +20,10 @@ function MessageList() {
         if(messageInput.length > 0){
             let message = {message: messageInput, tags: []}
             ApiService.sendMessage(message).then(
-                (result) => setMessageInput(messageInput.concat(result))
+                (result) => {
+                    setMessages(messages.concat(result))
+                    setMessageInput("")
+                }
             )
         }
     }
@@ -28,16 +31,15 @@ function MessageList() {
     return(
         <Div>
             <Row m ={{x:"4rem"}}>
-            <Col >
-            <Textarea 
-                right="0"
-                placeholder="Submit"
-                border="1px solid"
-                value={messageInput}
-                borderColor="black"
-                onChange={evt => setMessageInput(evt.target.value)}
-            />
-            </Col>
+                <Col >
+                    <Textarea 
+                    placeholder="Submit"
+                    border="1px solid"
+                    value={messageInput}
+                    borderColor="black"
+                    onChange={evt => setMessageInput(evt.target.value)}
+                    />
+                </Col>
             </Row>
             <Row flexDir="row-reverse" m={{x:"4rem"}}>
             <Button
