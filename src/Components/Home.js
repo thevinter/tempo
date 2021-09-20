@@ -3,6 +3,8 @@ import { Div } from "atomize";
 import Header from './Header.js'
 import ApiService from "../Services/ApiService.js";
 import MessageList from "./MessageList.js";
+import UserPage from "./UserPage.js";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 class Home extends React.Component {
 
@@ -20,8 +22,16 @@ class Home extends React.Component {
     render(){
         return (
             <Div>
+
+                <BrowserRouter>
                 <Header {...this.state.user}/>
-                <MessageList/>
+                    <Route path="/me/feed">
+                        <MessageList/>
+                    </Route>
+                    <Route path="/me/user">
+                        <UserPage/>
+                    </Route>
+                </BrowserRouter>
             </Div>
         )
     }

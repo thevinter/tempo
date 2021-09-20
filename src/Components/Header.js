@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {Container, Text, Row, Col, Icon} from 'atomize';
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header (props) {
 
@@ -18,7 +19,8 @@ function Header (props) {
                     <Icon name="Timestamp" size="20px" />
                 </Col>
                 <Col align="center" textAlign="right" size="10" >
-                    <Text justify="flex-end">welcome {userState.username}!</Text>
+                    <Text justify="flex-end">welcome <Link
+  to="/me/user">{userState.username}!</Link></Text>
                 </Col>
                 <Col textAlign="right" size="1">
                     <Icon name="Add" size="23px" />

@@ -20,7 +20,7 @@ function LoginForm () {
       (response) => {
         if(response.data && response.data.message) console.log(response.data.message)
         else {
-          history.push("/me");
+          history.push("/me/feed");
         }
       }
     )
